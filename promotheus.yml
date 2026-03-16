@@ -1,0 +1,30 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+scrape_configs:
+
+  - job_name: "new-server-jenkins"
+    static_configs:
+      - targets: ["localhost:9090"]
+        labels:
+          app: "new-server-jenkins"
+
+  - job_name: "node-1"
+    static_configs:
+      - targets: ["10.0.13.190:9100"]
+        labels:
+          app: "node-1"
+
+  - job_name: "ec2-sg"
+    ec2_sd_configs:
+      - region: "ap-southeast-2"
+        port: 9100
+        filters:
+          - name: tag:monitoring
+            values: ["true"]
