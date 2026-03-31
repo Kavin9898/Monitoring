@@ -1,6 +1,6 @@
-Step 1: Add Grafana Repository
- sudo vi /etc/yum.repos.d/grafana.repo
-Paste the following inside:
+📦 Step 1: Add Grafana Repository
+sudo vi /etc/yum.repos.d/grafana.repo
+📄 Paste the following:
 [grafana]
 name=Grafana
 baseurl=https://rpm.grafana.com
@@ -10,7 +10,7 @@ gpgcheck=1
 gpgkey=https://rpm.grafana.com/gpg.key
 sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-Step 2: Install Required Packages
+📥 Step 2: Install Required Packages
 sudo yum install -y wget ca-certificates
 🔄 Step 3: Update Certificates
 sudo update-ca-trust
@@ -24,3 +24,10 @@ sudo systemctl daemon-reexec
 sudo systemctl enable grafana-server
 sudo systemctl start grafana-server
 sudo systemctl status grafana-server
+🌐 Access Grafana
+http://<your-server-ip>:3000
+
+Default Login:
+
+Username: admin
+Password: admin
