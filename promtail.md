@@ -55,3 +55,8 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
+```SH
+sudo systemctl daemon-reload
+sudo systemctl enable promtail
+sudo systemctl start promtail
+```
