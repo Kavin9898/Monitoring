@@ -6,16 +6,15 @@
 sudo vi /etc/yum.repos.d/grafana.repo
 ```
 
-#Paste this inside
-        [grafana]
-        name=Grafana
-        baseurl=https://rpm.grafana.com
-        repo_gpgcheck=1
-        enabled=1                                                                                      Username: admin , Password: admin
-        gpgcheck=1
-        gpgkey=https://rpm.grafana.com/gpg.key
-        sslverify=1
-        sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+[grafana]
+name=Grafana
+baseurl=https://rpm.grafana.com
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://rpm.grafana.com/gpg.key
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 
 #Install Required Packages
         sudo yum install -y wget ca-certificates
