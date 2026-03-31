@@ -60,3 +60,16 @@ sudo systemctl daemon-reload
 sudo systemctl enable promtail
 sudo systemctl start promtail
 ```
+
+## 4. Test Promtail Sending Logs to Loki
+```SH
+curl -G "http://54.165.147.35:3100/loki/api/v1/labels"
+```
+If it returns labels (e.g., varlogs, applog), Promtail is sending logs correctly. If you see "Couldn't connect", check Loki's firewall/security settings.
+
+```SH
+Example Results:
+
+1860
+17549
+
