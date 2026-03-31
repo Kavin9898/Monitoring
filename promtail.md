@@ -19,7 +19,7 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: http://54.165.147.35:3100/loki/api/v1/push  # Ensure Loki is reachable
+  - url: http://54.165.147.35:3100/loki/api/v1/push  # CHANGE THE IP
 
 scrape_configs:
 - job_name: system
@@ -36,7 +36,7 @@ scrape_configs:
   - targets:
       - localhost  # Keep it localhost if logs are on the same node
     labels:
-```
       job: applog
-      __path__: /opt/*.log
+      __path__: /opt/*.log                       ## (OUTPUT PATH FILE (PWD))
       logtype: application
+```
