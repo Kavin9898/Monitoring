@@ -1,5 +1,8 @@
-📦 Step 1: Add Grafana Repository
+## Step 1: Add Grafana Repository
+
+```sh
 sudo vi /etc/yum.repos.d/grafana.repo
+```
 📄 Paste the following:
 [grafana]
 name=Grafana
